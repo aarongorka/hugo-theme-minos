@@ -6,3 +6,12 @@
     {{ if .Params.featuredImage }}
     <meta property="og:image" content="{{ .Params.featuredImage | absURL }}" />
     {{ end }}
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" value="{{ with .Permalink | absURL | urls.Parse }}{{ index (split .Host ":") 0 }}{{ end }}" />
+    <meta name="twitter:title" value="{{ if .Params.ogtitle }}{{ .Params.ogtitle }}{{ else }}{{ .Title }}{{ end }}" />
+    <meta name="twitter:description" value="{{ if .Params.ogdescription }}{{ .Params.ogdescription }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else}}{{ .Summary }}{{ end }}" />
+    {{ if .Params.featuredImage }}
+    <meta name="twitter:image" content="{{ .Params.featuredImage | absURL }}" />
+    {{ end }}
+    <meta name="twitter:url" value="{{ .Permalink }}" />
