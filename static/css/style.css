@@ -168,6 +168,9 @@ body {
   text-decoration: none;
   background-image: none;
 }
+#footer .logo-text {
+  font-weight: 1;
+}
 .article-meta a,
 a.article-title,
 .article-entry a,
