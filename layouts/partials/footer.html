@@ -1,15 +1,9 @@
 <footer id="footer">
     <div class="outer">
-        <div id="footer-info" class="inner">
+        <div id="footer-social" class="inner">
             {{ with .Site.Params.social }}
-              {{ range sort .}}
-                {{ if .icon }}
-                  <a class="logo-text" href="{{ .url }}"><i class="fab fa-{{ .icon }} fa-2x"></i></a>
-                {{ else }}
-                  <a href="{{ .url }}">{{ .name }}</a>
-                {{ end }}
-              {{ end }}
-            {{ end }}            
+                {{ range sort .}}<a class="logo-text" href="{{ .url }}"><i class="fab fa-{{ .icon }} fa-2x"></i></a>{{ end }}
+            {{ end }}
         </div>
         <div id="footer-info" class="inner">
             &copy; {{ now.Format "2006"}} {{ or .Site.Author .Site.Title }}&nbsp;

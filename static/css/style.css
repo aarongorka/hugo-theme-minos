@@ -169,6 +169,8 @@ body {
   background-image: none;
 }
 #footer .logo-text {
+  margin-left: 10px;
+  margin-right: 10px;
   font-weight: 1;
 }
 .article-meta a,
