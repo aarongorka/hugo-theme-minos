@@ -53,8 +53,7 @@ paginate = 10
 
 ### Disqus
 ```
-[params]
-    disqusShortname = "xxxxxx"
+disqusShortname = "xxxxxx"
 ```
 
 ### Google Analytics
@@ -69,6 +68,10 @@ paginate = 10
     katex = true
 ```
 
+This option enables the KaTeX auto-render extension. To render block math, use `$$ ... $$`. For inline math, use `\\( ... \\)`. For more details, please refer to https://github.com/KaTeX/KaTeX/blob/v0.7.1/contrib/auto-render/auto-render.js#L73 .
+
+### Others
+
 For other configuration variables, visit [Hugo documentation](https://gohugo.io/overview/configuration/#configuration-variables).
 
 ## Post Params
@@ -77,6 +80,22 @@ For other configuration variables, visit [Hugo documentation](https://gohugo.io/
 ```
 +++
 featuredImage = "img/foobar.jpg"
++++
+```
+
+### Hide the post from index.html
+This can be used when creating an "About me"-page.
+```
++++
+hidden = true
++++
+```
+
+### Enable KaTeX for this post
+Enable KaTeX for a specific post without enabling the global switch.
+```
++++
+katex = true
 +++
 ```
 

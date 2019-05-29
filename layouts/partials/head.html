@@ -6,7 +6,7 @@
     {{ partial "meta.html" . }}
     {{ partial "og.html" . }}
 
-    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ with .OutputFormats.Get "RSS" }}{{ .Permalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
     <link rel="shortcut icon" href="/favicon.svg">
 
     <link href="/webfonts/ptserif/main.css" rel="preload" as="style">
@@ -15,7 +15,5 @@
     <link rel="stylesheet" href="/css/style.css" rel="preload" as="style">
     <link rel="stylesheet" href="/css/fa.css" rel="preload" as="style">
 
-    <link href="http://gmpg.org/xfn/11" rel="profile">
-    
-    {{ .Hugo.Generator }}
+    {{ hugo.Generator }}
 </head>

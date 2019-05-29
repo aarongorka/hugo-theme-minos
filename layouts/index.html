@@ -3,7 +3,7 @@
 <div id="container">
     {{ partial "header.html" . }}
     <section id="main" class="outer">
-        {{ range .Paginator.Pages }}
+        {{ range where .Paginator.Pages "Params.hidden" "ne" "true" }}
         <article class="article article-type-post" itemscope itemprop="blogPost">
             <div class="article-inner">
                 <!--<%- partial('post/gallery') %>-->
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     {{ end }}
-                    {{ if .Site.Params.disqusShortname }}
+                    {{ if .Site.DisqusShortname }}
                     <div class="article-comment-link-wrap">
                         <a href="{{ .RelPermalink }}#disqus_thread" class="article-comment-link">Comments</a>
                     </div>
